@@ -1,4 +1,4 @@
-const indexRouter = require("./routers/IndexRouter")
+const indexRouter = require("./routes/IndexRouter")
 const express = require("express")
 const path = require("path")
 const app = express()
