@@ -15,7 +15,26 @@ const messages = [
 ]
 
 indexRouter.get("/", (req, res) => {
-    res.render("./index/routes", { "messages" : messages })
+    res.render("./", { "messages" : messages })
+})
+
+indexRouter.get("/new", (req, res) => {
+    res.render("./form")
+})
+
+indexRouter.post("/new", (req, res) => {
+  const body = req.body
+  messages.push({ 
+    text: body.messageText,
+    user: body.messageAuthor,
+    added: new Date()
+  })
+  res.redirect("/")
+})
+
+indexRouter.get("/messages/:index", (req, res) => {
+  const msg = messages[req.params.index]
+  res.render("./message", { msg })
 })
 
 
