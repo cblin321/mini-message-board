@@ -1,0 +1,50 @@
+:root {
+  --spacing-1: 4px;   
+  --spacing-2: 8px;   
+  --spacing-3: 12px;  /* 16 × 0.75 */
+  --spacing-4: 16px;  /* 16 × 1 */
+  --spacing-5: 20px;  /* 16 × 1.25 */
+  --spacing-6: 24px;  /* 16 × 1.5 */
+  --spacing-8: 32px;  /* 16 × 2 */
+  --spacing-12: 48px; /* 16 × 3 */
+  --spacing-16: 64px; /* 16 × 4 */
+  --spacing-24: 96px; /* 16 × 6 */
+  --spacing-32: 128px; /* 16 × 8 */
+  --spacing-48: 192px; /* 16 × 12 */
+  --spacing-64: 256px; /* 16 × 16 */
+  --spacing-96: 384px; /* 16 × 24 */
+  --spacing-128: 512px; /* 16 × 32 */
+  --spacing-160: 640px; /* 16 × 40 */
+  --spacing-192: 768px; /* 16 × 48 */
+
+  --white: #ffffff;
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
+  --black: #000000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+}
