@@ -8,9 +8,16 @@
 </head>
 <body>
     <%- include("./nav")  %>
-   <form method="POST" action="/new">
-        <input name = "messageText" placeholder="message"/>
-        <input name="messageAuthor" placeholder="username"/>
+   <form method="POST" action="/new" class="new-msg-form">
+        <div class="input-container">
+            <label for="message-author">Your name: </label>
+            <input id="message-author" name="messageAuthor" placeholder="Username"/>
+        </div>
+
+        <div class="input-container">
+            <label for="message-text">Message text: </label>
+            <input id="message-text" name="messageText" placeholder="What's on your mind?"/>
+        </div>
         <button type="submit">Submit</button>
    </form> 
 </body>

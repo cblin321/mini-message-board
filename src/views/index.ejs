@@ -10,11 +10,17 @@
     <%- include("./nav")  %>
     <div class="messages">
         <% messages.map((msg, index) => { %>
-            <div>
-                <p><%= msg.user %></p>
-                <p><%= msg.added %></p>
-                <p><%= msg.text %></p>
-                <button><a href="/messages/<%= index %>">Open</a></button>
+            <div class="index-msg-container">
+                <div class="index-msg-metadata">
+                    <p class="msg-user"><%= msg.user %></p>
+                    <p class="msg-added"><%= msg.added %></p>
+                </div>
+                <p class="msg-text"><%= msg.text %></p>
+
+                <button class="open-msg">
+                    <a  class="open-msg-link" 
+                        href="/messages/<%= index %>">Open</a>
+                </button>
             </div>
         <% }) %>
     </div>

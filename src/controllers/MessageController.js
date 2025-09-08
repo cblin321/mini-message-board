@@ -6,7 +6,7 @@ module.exports = {
         messages.push({ 
             text: body.messageText,
             user: body.messageAuthor,
-            added: new Date()
+            added: new Date().toDateString()
         })
         res.redirect("/")
     } ,
