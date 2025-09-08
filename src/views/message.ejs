@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <title>Document</title>
 </head>
 <body>
     <%- include("./nav")  %>
-    <p class="msg-text"><%= msg.text %></p>
-    <p class="msg-added"><%= msg.added %></p>
-    <p class="msg-user"><%= msg.user %></p> 
+    <div class="messages">
+        <div class="index-msg-container">
+            <div class="index-msg-metadata">
+                <p class="msg-user"><%= msg.user %></p>
+                <p class="msg-added"><%= msg.added %></p>
+            </div>
+                <p class="msg-text"><%= msg.text %></p>
+        </div>
+    </div>
 </body>
 </html>
