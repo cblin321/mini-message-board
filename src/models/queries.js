@@ -1,5 +1,6 @@
 const { argv } = require("node:process")
 const { Pool } = require("pg")
+require('dotenv').config()
  
 // const dbArgKeys = ["user", "password", "host", "port", "database"]
 
@@ -8,6 +9,7 @@ const { Pool } = require("pg")
 // const pool = new Pool({
 //   ...dbArgs,
 // })
+
 
 const pool = new Pool({
   connectionString: process.env.CONNECTION_URL

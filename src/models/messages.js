@@ -10,10 +10,10 @@ async function createUserPost(req, res) {
   const blankAuthor = !body.messageAuthor || body.messageAuthor.trim().length === 0
   const blankMsg = !body.messageText || body.messageText.trim().length === 0
   if (blankAuthor || blankMsg)
-    res.status(400).send("Author or msg cannot be blank")
+    return res.status(400).send("Author or msg cannot be blank")
 
   if (body.messageText.length > 500)
-    res.status(400).send("Limit messages to 500 characters")
+    return res.status(400).send("Limit messages to 500 characters")
 
   await createUserPostQuery(body.messageAuthor, body.messageText, new Date().toDateString())
 }

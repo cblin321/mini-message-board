@@ -1,6 +1,7 @@
 // const dbArgKeys = ["user", "password", "host", "port", "database"]
 // const { argv } = require("node:process")
 
+require('dotenv').config()
 const { Client } = require("pg")
 
 // const dbArgs = Object.fromEntries(argv.map(arg => arg.split("=")).filter(([key, val]) => dbArgKeys.includes(key)))
