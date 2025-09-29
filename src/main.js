@@ -4,7 +4,6 @@ const path = require("path")
 const app = express()
 
 require('dotenv').config()
-console.log(process.env.CONNECTION_URL)
 
 app.use(express.static(path.join(__dirname, "public")))
 
