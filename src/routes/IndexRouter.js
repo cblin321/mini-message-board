@@ -4,13 +4,13 @@ const IndexContoller = require("../controllers/IndexContoller")
 const MessageController = require("../controllers/MessageController")
 
 
-indexRouter.get("/", IndexContoller.index)
+indexRouter.get("/", async (req, res) => await IndexContoller.index(req, res))
 
 indexRouter.get("/new", MessageController.new)
 
-indexRouter.post("/new", MessageController.createNew)
+indexRouter.post("/new", async (req, res) => await MessageController.createNew(req, res))
 
-indexRouter.get("/messages/:index", MessageController.get)
+indexRouter.get("/messages/:id", async (req, res) => await MessageController.get(req, res))
 
 
 module.exports = indexRouter

@@ -1,1 +1,3 @@
 node_modules/
+build.bat
+populatedb.bat

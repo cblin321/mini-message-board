@@ -1,4 +1,7 @@
-const messages = require("../models/messages")
+const model = require("../models/messages")
 module.exports = {
-   index:  (req, res) => res.render("./", { "messages" : messages }),
+   index:  async (req, res) => {
+      const messages = await model.getAllPosts()
+      res.render("./", { "messages" : messages })
+   }
 }
