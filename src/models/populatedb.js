@@ -1,9 +1,9 @@
-const dbArgKeys = ["user", "password", "host", "port", "database"]
-const { argv } = require("node:process")
+// const dbArgKeys = ["user", "password", "host", "port", "database"]
+// const { argv } = require("node:process")
 
 const { Client } = require("pg")
 
-const dbArgs = Object.fromEntries(argv.map(arg => arg.split("=")).filter(([key, val]) => dbArgKeys.includes(key)))
+// const dbArgs = Object.fromEntries(argv.map(arg => arg.split("=")).filter(([key, val]) => dbArgKeys.includes(key)))
 
 
 const SQL = `
@@ -30,8 +30,12 @@ const SQL = `
 `
 
 async function main() {
+    // const client = new Client({
+    // ...dbArgs,
+    // })
+
     const client = new Client({
-    ...dbArgs,
+        connectionString: process.env.CONNECTION_URL,
     })
 
     await client.connect()

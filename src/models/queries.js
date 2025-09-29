@@ -1,12 +1,16 @@
 const { argv } = require("node:process")
 const { Pool } = require("pg")
  
-const dbArgKeys = ["user", "password", "host", "port", "database"]
+// const dbArgKeys = ["user", "password", "host", "port", "database"]
 
-const dbArgs = Object.fromEntries(argv.map(arg => arg.split("=")).filter(([key, val]) => dbArgKeys.includes(key)))
+// const dbArgs = Object.fromEntries(argv.map(arg => arg.split("=")).filter(([key, val]) => dbArgKeys.includes(key)))
+
+// const pool = new Pool({
+//   ...dbArgs,
+// })
 
 const pool = new Pool({
-  ...dbArgs,
+  connectionString: process.env.CONNECTION_URL
 })
 
 
@@ -23,7 +27,6 @@ async function createUserPostQuery(username, content, date) {
 
 
   res = await pool.query("INSERT INTO messages (body, date, username) VALUES($1, $2, $3);", [content, date, username])
-  console.log("fields", res.fields)
 }
 
 async function getMessageQuery(id) {
